@@ -8,7 +8,7 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home'
+        redirectTo: 'home'
     },
     {
         path: '',
@@ -17,8 +17,16 @@ export const routes: Routes = [
             {
                 path: 'home',
                 loadChildren: './home/home.module#HomeModule'
+            },
+            {
+                path: 'calendar/:calId',
+                loadChildren: './calendar/calendar.module#CalendarModule'
             }
         ]
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
     }
 ];
 
